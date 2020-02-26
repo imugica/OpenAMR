@@ -1,0 +1,3 @@
+magneticProp.C
+
+LIB = $(FOAM_USER_LIBBIN)/libmagneticProp

@@ -1,0 +1,777 @@
+wmake libso .
+g++ -std=c++11 -m64 -Dlinux64 -DWM_ARCH_OPTION=64 -DWM_DP -DWM_LABEL_SIZE=32 -Wall -Wextra -Wold-style-cast -Wnon-virtual-dtor -Wno-unused-parameter -Wno-invalid-offsetof -Wno-attributes -O3  -DNoRepository -ftemplate-depth-100 -I/opt/openfoam7/src/triSurface/lnInclude -I/opt/openfoam7/src/meshTools/lnInclude -I/opt/openfoam7/src/finiteVolume/lnInclude  -IlnInclude -I. -I/opt/openfoam7/src/OpenFOAM/lnInclude -I/opt/openfoam7/src/OSspecific/POSIX/lnInclude   -fPIC -c movingMagnetConstMurBC.C -o Make/linux64GccDPInt32Opt/movingMagnetConstMurBC.o
+/opt/openfoam7/wmake/rules/General/transform:25: recipe for target 'Make/linux64GccDPInt32Opt/movingMagnetConstMurBC.o' failed
+movingMagnetConstMurBC.C:37:7: error: ‘movingMagnetConstMurBC’ in namespace ‘Foam’ does not name a type
+ Foam::movingMagnetConstMurBC
+       ^~~~~~~~~~~~~~~~~~~~~~
+movingMagnetConstMurBC.C:53:7: error: ‘movingMagnetConstMurBC’ in namespace ‘Foam’ does not name a type
+ Foam::movingMagnetConstMurBC
+       ^~~~~~~~~~~~~~~~~~~~~~
+movingMagnetConstMurBC.C:66:7: error: ‘movingMagnetConstMurBC’ in namespace ‘Foam’ does not name a type
+ Foam::movingMagnetConstMurBC
+       ^~~~~~~~~~~~~~~~~~~~~~
+movingMagnetConstMurBC.C:83:7: error: ‘movingMagnetConstMurBC’ in namespace ‘Foam’ does not name a type
+ Foam::movingMagnetConstMurBC
+       ^~~~~~~~~~~~~~~~~~~~~~
+movingMagnetConstMurBC.C:93:7: error: ‘movingMagnetConstMurBC’ in namespace ‘Foam’ does not name a type
+ Foam::movingMagnetConstMurBC
+       ^~~~~~~~~~~~~~~~~~~~~~
+movingMagnetConstMurBC.C:106:12: error: ‘Foam::movingMagnetConstMurBC’ has not been declared
+ void Foam::movingMagnetConstMurBC::updateCoeffs()
+            ^~~~~~~~~~~~~~~~~~~~~~
+movingMagnetConstMurBC.C: In function ‘void updateCoeffs()’:
+movingMagnetConstMurBC.C:108:9: error: invalid use of ‘this’ in non-member function
+     if (this->updated())
+         ^~~~
+movingMagnetConstMurBC.C:113:5: error: invalid use of ‘this’ in non-member function
+     this->valueFraction() =0;
+     ^~~~
+movingMagnetConstMurBC.C:115:11: error: ‘fvMesh’ does not name a type; did you mean ‘fvMesh_H’?
+     const fvMesh& mesh = patch().boundaryMesh().mesh();
+           ^~~~~~
+           fvMesh_H
+movingMagnetConstMurBC.C:117:11: error: ‘IOdictionary’ does not name a type; did you mean ‘IOdictionary_H’?
+     const IOdictionary& transDict=mesh.lookupObject<IOdictionary>("magneticProperties");
+           ^~~~~~~~~~~~
+           IOdictionary_H
+movingMagnetConstMurBC.C:118:11: error: ‘dimensionedScalar’ does not name a type; did you mean ‘dimensionedScalar_H’?
+     const dimensionedScalar& mur=transDict.lookup("mur");
+           ^~~~~~~~~~~~~~~~~
+           dimensionedScalar_H
+movingMagnetConstMurBC.C:120:11: error: ‘Time’ does not name a type; did you mean ‘time’?
+     const Time& time = db().time();
+           ^~~~
+           time
+movingMagnetConstMurBC.C:121:11: error: ‘IOdictionary’ does not name a type; did you mean ‘IOdictionary_H’?
+     const IOdictionary& bcDict=mesh.lookupObject<IOdictionary>("magnet");
+           ^~~~~~~~~~~~
+           IOdictionary_H
+movingMagnetConstMurBC.C:122:11: error: ‘word’ does not name a type; did you mean ‘word_H’?
+     const word magnetType=bcDict.lookup("magnetType");
+           ^~~~
+           word_H
+movingMagnetConstMurBC.C:124:11: error: ‘vector’ does not name a type; did you mean ‘vector_H’?
+     const vector offSet=bcDict.lookup("offSet");
+           ^~~~~~
+           vector_H
+movingMagnetConstMurBC.C:125:11: error: ‘vector’ does not name a type; did you mean ‘vector_H’?
+     const vector Mrem=bcDict.lookup("Mrem");
+           ^~~~~~
+           vector_H
+movingMagnetConstMurBC.C:126:11: error: ‘scalarField’ does not name a type; did you mean ‘scalarField_H’?
+     const scalarField& pos=bcDict.lookup("Position");
+           ^~~~~~~~~~~
+           scalarField_H
+movingMagnetConstMurBC.C:127:11: error: ‘scalarField’ does not name a type; did you mean ‘scalarField_H’?
+     const scalarField& tpos=bcDict.lookup("time");
+           ^~~~~~~~~~~
+           scalarField_H
+movingMagnetConstMurBC.C:129:33: error: request for member ‘value’ in ‘time’, which is of non-class type ‘time_t(time_t*) throw () {aka long int(long int*) throw ()}’
+     const double relTime=((time.value()/tpos[tpos.size()-1])-floor(time.value()/tpos[tpos.size()-1]))*tpos[tpos.size()-1];
+                                 ^~~~~
+movingMagnetConstMurBC.C:129:41: error: ‘tpos’ was not declared in this scope
+     const double relTime=((time.value()/tpos[tpos.size()-1])-floor(time.value()/tpos[tpos.size()-1]))*tpos[tpos.size()-1];
+                                         ^~~~
+movingMagnetConstMurBC.C:129:41: note: suggested alternative: ‘tms’
+     const double relTime=((time.value()/tpos[tpos.size()-1])-floor(time.value()/tpos[tpos.size()-1]))*tpos[tpos.size()-1];
+                                         ^~~~
+                                         tms
+movingMagnetConstMurBC.C:129:73: error: request for member ‘value’ in ‘time’, which is of non-class type ‘time_t(time_t*) throw () {aka long int(long int*) throw ()}’
+     const double relTime=((time.value()/tpos[tpos.size()-1])-floor(time.value()/tpos[tpos.size()-1]))*tpos[tpos.size()-1];
+                                                                         ^~~~~
+movingMagnetConstMurBC.C:130:59: error: ‘pos’ was not declared in this scope
+     const double relPos= interpolateSplineXY(relTime,tpos,pos);
+                                                           ^~~
+movingMagnetConstMurBC.C:130:59: note: suggested alternative:
+In file included from /opt/openfoam7/src/OpenFOAM/lnInclude/GeometricScalarField.C:29:0,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/GeometricScalarField.H:173,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/GeometricFields.H:34,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/volFields.H:37,
+                 from movingMagnetConstMurBC.C:29:
+/opt/openfoam7/src/OpenFOAM/lnInclude/GeometricScalarField.C:804:32: note:   ‘Foam::pos’
+ UNARY_FUNCTION(scalar, scalar, pos, pos)
+                                ^
+/opt/openfoam7/src/OpenFOAM/lnInclude/GeometricFieldFunctionsM.C:38:6: note: in definition of macro ‘UNARY_FUNCTION’
+ void Func                                                                      \
+      ^~~~
+movingMagnetConstMurBC.C:130:26: error: ‘interpolateSplineXY’ was not declared in this scope
+     const double relPos= interpolateSplineXY(relTime,tpos,pos);
+                          ^~~~~~~~~~~~~~~~~~~
+movingMagnetConstMurBC.C:130:26: note: suggested alternative:
+In file included from /opt/openfoam7/src/OpenFOAM/lnInclude/interpolateSplineXY.H:76:0,
+                 from movingMagnetConstMurBC.C:32:
+/opt/openfoam7/src/OpenFOAM/lnInclude/interpolateSplineXY.C:51:6: note:   ‘Foam::interpolateSplineXY’
+ Type Foam::interpolateSplineXY
+      ^~~~
+movingMagnetConstMurBC.C:132:11: error: ‘vector’ does not name a type; did you mean ‘vector_H’?
+     const vector Lp=bcDict.lookup("Lp");
+           ^~~~~~
+           vector_H
+movingMagnetConstMurBC.C:133:11: error: ‘vector’ does not name a type; did you mean ‘vector_H’?
+     const vector Lt=bcDict.lookup("Lt");
+           ^~~~~~
+           vector_H
+movingMagnetConstMurBC.C:136:9: error: ‘magnetType’ was not declared in this scope
+     if (magnetType=="Linear-square")
+         ^~~~~~~~~~
+In file included from /opt/openfoam7/src/OpenFOAM/lnInclude/List.H:43:0,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/wordList.H:42,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/patchIdentifier.H:38,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/polyPatch.H:42,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/fvPatch.H:39,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/fvPatchField.H:47,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/mixedFvPatchField.H:71,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/mixedFvPatchFields.H:29,
+                 from movingMagnetConstMurBC.H:41,
+                 from movingMagnetConstMurBC.C:26:
+movingMagnetConstMurBC.C:138:12: error: ‘patch’ was not declared in this scope
+     forAll(patch(),cellI)
+            ^
+/opt/openfoam7/src/OpenFOAM/lnInclude/UList.H:436:30: note: in definition of macro ‘forAll’
+     for (Foam::label i=0; i<(list).size(); i++)
+                              ^~~~
+movingMagnetConstMurBC.C:138:12: note: suggested alternative: ‘rpmatch’
+     forAll(patch(),cellI)
+            ^
+/opt/openfoam7/src/OpenFOAM/lnInclude/UList.H:436:30: note: in definition of macro ‘forAll’
+     for (Foam::label i=0; i<(list).size(); i++)
+                              ^~~~
+movingMagnetConstMurBC.C:140:23: error: ‘condition1_’ was not declared in this scope
+                       condition1_=false;
+                       ^~~~~~~~~~~
+movingMagnetConstMurBC.C:141:23: error: ‘condition2_’ was not declared in this scope
+                       condition2_=false;
+                       ^~~~~~~~~~~
+movingMagnetConstMurBC.C:142:23: error: ‘condition3_’ was not declared in this scope
+                       condition3_=false;
+                       ^~~~~~~~~~~
+movingMagnetConstMurBC.C:143:23: error: ‘condition4_’ was not declared in this scope
+                       condition4_=false;
+                       ^~~~~~~~~~~
+movingMagnetConstMurBC.C:145:59: error: ‘Lp’ was not declared in this scope
+                       condition1_=(patch().Cf()[cellI] & (Lp/mag(Lp)))< ((offSet & (Lp/mag(Lp))) + relPos + mag(Lp));
+                                                           ^~
+movingMagnetConstMurBC.C:145:62: error: ‘mag’ was not declared in this scope
+                       condition1_=(patch().Cf()[cellI] & (Lp/mag(Lp)))< ((offSet & (Lp/mag(Lp))) + relPos + mag(Lp));
+                                                              ^~~
+movingMagnetConstMurBC.C:145:62: note: suggested alternative:
+In file included from /opt/openfoam7/src/OpenFOAM/lnInclude/GeometricField.C:1559:0,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/GeometricField.H:721,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/GeometricScalarField.H:38,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/GeometricFields.H:34,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/volFields.H:37,
+                 from movingMagnetConstMurBC.C:29:
+/opt/openfoam7/src/OpenFOAM/lnInclude/GeometricFieldFunctions.C:320:50: note:   ‘Foam::mag’
+ tmp<GeometricField<scalar, PatchField, GeoMesh>> mag
+                                                  ^~~
+movingMagnetConstMurBC.C:145:75: error: ‘offSet’ was not declared in this scope
+                       condition1_=(patch().Cf()[cellI] & (Lp/mag(Lp)))< ((offSet & (Lp/mag(Lp))) + relPos + mag(Lp));
+                                                                           ^~~~~~
+movingMagnetConstMurBC.C:145:75: note: suggested alternative: ‘off_t’
+                       condition1_=(patch().Cf()[cellI] & (Lp/mag(Lp)))< ((offSet & (Lp/mag(Lp))) + relPos + mag(Lp));
+                                                                           ^~~~~~
+                                                                           off_t
+movingMagnetConstMurBC.C:147:59: error: ‘Lt’ was not declared in this scope
+                       condition3_=(patch().Cf()[cellI] & (Lt/mag(Lt)))< ((offSet & (Lt/mag(Lt)))  + mag(Lt));
+                                                           ^~
+movingMagnetConstMurBC.C:150:23: error: ‘scalar’ was not declared in this scope
+                       scalar& localpsiGrad=this->refGrad()[cellI];
+                       ^~~~~~
+movingMagnetConstMurBC.C:150:23: note: suggested alternative:
+In file included from /opt/openfoam7/src/OpenFOAM/lnInclude/zeroI.H:27:0,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/zero.H:107,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/UList.H:49,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/List.H:43,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/wordList.H:42,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/patchIdentifier.H:38,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/polyPatch.H:42,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/fvPatch.H:39,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/fvPatchField.H:47,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/mixedFvPatchField.H:71,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/mixedFvPatchFields.H:29,
+                 from movingMagnetConstMurBC.H:41,
+                 from movingMagnetConstMurBC.C:26:
+/opt/openfoam7/src/OpenFOAM/lnInclude/scalar.H:69:26: note:   ‘Foam::scalar’
+     typedef doubleScalar scalar;
+                          ^~~~~~
+movingMagnetConstMurBC.C:150:31: error: ‘localpsiGrad’ was not declared in this scope
+                       scalar& localpsiGrad=this->refGrad()[cellI];
+                               ^~~~~~~~~~~~
+movingMagnetConstMurBC.C:150:31: note: suggested alternative: ‘localtime_r’
+                       scalar& localpsiGrad=this->refGrad()[cellI];
+                               ^~~~~~~~~~~~
+                               localtime_r
+movingMagnetConstMurBC.C:150:44: error: invalid use of ‘this’ in non-member function
+                       scalar& localpsiGrad=this->refGrad()[cellI];
+                                            ^~~~
+movingMagnetConstMurBC.C:154:19: error: ‘Mrem’ was not declared in this scope
+     localpsiGrad=(Mrem & patch().Sf()[cellI])/(patch().magSf()[cellI]*mur.value());
+                   ^~~~
+movingMagnetConstMurBC.C:154:19: note: suggested alternative: ‘drem’
+     localpsiGrad=(Mrem & patch().Sf()[cellI])/(patch().magSf()[cellI]*mur.value());
+                   ^~~~
+                   drem
+movingMagnetConstMurBC.C:154:71: error: ‘mur’ was not declared in this scope
+     localpsiGrad=(Mrem & patch().Sf()[cellI])/(patch().magSf()[cellI]*mur.value());
+                                                                       ^~~
+In file included from /opt/openfoam7/src/OpenFOAM/lnInclude/List.H:43:0,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/wordList.H:42,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/patchIdentifier.H:38,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/polyPatch.H:42,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/fvPatch.H:39,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/fvPatchField.H:47,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/mixedFvPatchField.H:71,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/mixedFvPatchFields.H:29,
+                 from movingMagnetConstMurBC.H:41,
+                 from movingMagnetConstMurBC.C:26:
+movingMagnetConstMurBC.C:171:12: error: ‘patch’ was not declared in this scope
+     forAll(patch(),cellI)
+            ^
+/opt/openfoam7/src/OpenFOAM/lnInclude/UList.H:436:30: note: in definition of macro ‘forAll’
+     for (Foam::label i=0; i<(list).size(); i++)
+                              ^~~~
+movingMagnetConstMurBC.C:171:12: note: suggested alternative: ‘rpmatch’
+     forAll(patch(),cellI)
+            ^
+/opt/openfoam7/src/OpenFOAM/lnInclude/UList.H:436:30: note: in definition of macro ‘forAll’
+     for (Foam::label i=0; i<(list).size(); i++)
+                              ^~~~
+movingMagnetConstMurBC.C:173:23: error: ‘condition1_’ was not declared in this scope
+                       condition1_=false;
+                       ^~~~~~~~~~~
+movingMagnetConstMurBC.C:174:23: error: ‘condition2_’ was not declared in this scope
+                       condition2_=false;
+                       ^~~~~~~~~~~
+movingMagnetConstMurBC.C:175:23: error: ‘condition3_’ was not declared in this scope
+                       condition3_=false;
+                       ^~~~~~~~~~~
+movingMagnetConstMurBC.C:176:23: error: ‘condition4_’ was not declared in this scope
+                       condition4_=false;
+                       ^~~~~~~~~~~
+movingMagnetConstMurBC.C:178:36: error: ‘Lp’ was not declared in this scope
+    Nx=fabs((patch().Cf()[cellI] & (Lp/mag(Lp)))-(offSet & (Lp/mag(Lp))) -relPos )/(2*mag(Lp))-0.5;
+                                    ^~
+movingMagnetConstMurBC.C:178:39: error: ‘mag’ was not declared in this scope
+    Nx=fabs((patch().Cf()[cellI] & (Lp/mag(Lp)))-(offSet & (Lp/mag(Lp))) -relPos )/(2*mag(Lp))-0.5;
+                                       ^~~
+movingMagnetConstMurBC.C:178:39: note: suggested alternative:
+In file included from /opt/openfoam7/src/OpenFOAM/lnInclude/GeometricField.C:1559:0,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/GeometricField.H:721,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/GeometricScalarField.H:38,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/GeometricFields.H:34,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/volFields.H:37,
+                 from movingMagnetConstMurBC.C:29:
+/opt/openfoam7/src/OpenFOAM/lnInclude/GeometricFieldFunctions.C:320:50: note:   ‘Foam::mag’
+ tmp<GeometricField<scalar, PatchField, GeoMesh>> mag
+                                                  ^~~
+movingMagnetConstMurBC.C:178:50: error: ‘offSet’ was not declared in this scope
+    Nx=fabs((patch().Cf()[cellI] & (Lp/mag(Lp)))-(offSet & (Lp/mag(Lp))) -relPos )/(2*mag(Lp))-0.5;
+                                                  ^~~~~~
+movingMagnetConstMurBC.C:178:50: note: suggested alternative: ‘off_t’
+    Nx=fabs((patch().Cf()[cellI] & (Lp/mag(Lp)))-(offSet & (Lp/mag(Lp))) -relPos )/(2*mag(Lp))-0.5;
+                                                  ^~~~~~
+                                                  off_t
+movingMagnetConstMurBC.C:194:40: error: ‘Lt’ was not declared in this scope
+    condition3_=(patch().Cf()[cellI] & (Lt/mag(Lt)))< ((offSet & (Lt/mag(Lt)))  + mag(Lt));
+                                        ^~
+movingMagnetConstMurBC.C:197:4: error: ‘scalar’ was not declared in this scope
+    scalar& localpsiGrad=this->refGrad()[cellI];
+    ^~~~~~
+movingMagnetConstMurBC.C:197:4: note: suggested alternative:
+In file included from /opt/openfoam7/src/OpenFOAM/lnInclude/zeroI.H:27:0,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/zero.H:107,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/UList.H:49,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/List.H:43,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/wordList.H:42,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/patchIdentifier.H:38,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/polyPatch.H:42,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/fvPatch.H:39,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/fvPatchField.H:47,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/mixedFvPatchField.H:71,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/mixedFvPatchFields.H:29,
+                 from movingMagnetConstMurBC.H:41,
+                 from movingMagnetConstMurBC.C:26:
+/opt/openfoam7/src/OpenFOAM/lnInclude/scalar.H:69:26: note:   ‘Foam::scalar’
+     typedef doubleScalar scalar;
+                          ^~~~~~
+movingMagnetConstMurBC.C:197:12: error: ‘localpsiGrad’ was not declared in this scope
+    scalar& localpsiGrad=this->refGrad()[cellI];
+            ^~~~~~~~~~~~
+movingMagnetConstMurBC.C:197:12: note: suggested alternative: ‘localtime_r’
+    scalar& localpsiGrad=this->refGrad()[cellI];
+            ^~~~~~~~~~~~
+            localtime_r
+movingMagnetConstMurBC.C:197:25: error: invalid use of ‘this’ in non-member function
+    scalar& localpsiGrad=this->refGrad()[cellI];
+                         ^~~~
+movingMagnetConstMurBC.C:202:19: error: ‘Mrem’ was not declared in this scope
+     localpsiGrad=(Mrem & patch().Sf()[cellI])/(patch().magSf()[cellI]*mur.value());
+                   ^~~~
+movingMagnetConstMurBC.C:202:19: note: suggested alternative: ‘drem’
+     localpsiGrad=(Mrem & patch().Sf()[cellI])/(patch().magSf()[cellI]*mur.value());
+                   ^~~~
+                   drem
+movingMagnetConstMurBC.C:202:71: error: ‘mur’ was not declared in this scope
+     localpsiGrad=(Mrem & patch().Sf()[cellI])/(patch().magSf()[cellI]*mur.value());
+                                                                       ^~~
+movingMagnetConstMurBC.C:214:19: error: ‘Lp’ was not declared in this scope
+   double Raux=mag(Lp);
+                   ^~
+movingMagnetConstMurBC.C:214:15: error: ‘mag’ was not declared in this scope
+   double Raux=mag(Lp);
+               ^~~
+movingMagnetConstMurBC.C:214:15: note: suggested alternative:
+In file included from /opt/openfoam7/src/OpenFOAM/lnInclude/GeometricField.C:1559:0,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/GeometricField.H:721,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/GeometricScalarField.H:38,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/GeometricFields.H:34,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/volFields.H:37,
+                 from movingMagnetConstMurBC.C:29:
+/opt/openfoam7/src/OpenFOAM/lnInclude/GeometricFieldFunctions.C:320:50: note:   ‘Foam::mag’
+ tmp<GeometricField<scalar, PatchField, GeoMesh>> mag
+                                                  ^~~
+In file included from /opt/openfoam7/src/OpenFOAM/lnInclude/List.H:43:0,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/wordList.H:42,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/patchIdentifier.H:38,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/polyPatch.H:42,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/fvPatch.H:39,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/fvPatchField.H:47,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/mixedFvPatchField.H:71,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/mixedFvPatchFields.H:29,
+                 from movingMagnetConstMurBC.H:41,
+                 from movingMagnetConstMurBC.C:26:
+movingMagnetConstMurBC.C:216:10: error: ‘patch’ was not declared in this scope
+   forAll(patch(),cellI)
+          ^
+/opt/openfoam7/src/OpenFOAM/lnInclude/UList.H:436:30: note: in definition of macro ‘forAll’
+     for (Foam::label i=0; i<(list).size(); i++)
+                              ^~~~
+movingMagnetConstMurBC.C:216:10: note: suggested alternative: ‘rpmatch’
+   forAll(patch(),cellI)
+          ^
+/opt/openfoam7/src/OpenFOAM/lnInclude/UList.H:436:30: note: in definition of macro ‘forAll’
+     for (Foam::label i=0; i<(list).size(); i++)
+                              ^~~~
+movingMagnetConstMurBC.C:218:25: error: ‘condition1_’ was not declared in this scope
+                         condition1_=false;
+                         ^~~~~~~~~~~
+movingMagnetConstMurBC.C:220:83: error: ‘offSet’ was not declared in this scope
+                         double CfProj_p = (patch().Cf()[cellI] & (Lp/mag(Lp))) - (offSet & (Lp/mag(Lp))) -relPos;
+                                                                                   ^~~~~~
+movingMagnetConstMurBC.C:220:83: note: suggested alternative: ‘off_t’
+                         double CfProj_p = (patch().Cf()[cellI] & (Lp/mag(Lp))) - (offSet & (Lp/mag(Lp))) -relPos;
+                                                                                   ^~~~~~
+                                                                                   off_t
+movingMagnetConstMurBC.C:221:67: error: ‘Lt’ was not declared in this scope
+                         double CfProj_t = (patch().Cf()[cellI] & (Lt/mag(Lt))) - (offSet & (Lt/mag(Lt)));
+                                                                   ^~
+movingMagnetConstMurBC.C:223:4: error: ‘vector’ was not declared in this scope
+    vector CfProj = CfProj_p*(Lp/mag(Lp)) + CfProj_t*(Lt/mag(Lt));
+    ^~~~~~
+movingMagnetConstMurBC.C:223:4: note: suggested alternative:
+In file included from /opt/openfoam7/src/OpenFOAM/lnInclude/point.H:35:0,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/pointField.H:35,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/edge.H:40,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/edgeList.H:32,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/PrimitivePatch.H:56,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/primitivePatch.H:35,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/polyPatch.H:43,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/fvPatch.H:39,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/fvPatchField.H:47,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/mixedFvPatchField.H:71,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/mixedFvPatchFields.H:29,
+                 from movingMagnetConstMurBC.H:41,
+                 from movingMagnetConstMurBC.C:26:
+/opt/openfoam7/src/OpenFOAM/lnInclude/vector.H:49:24: note:   ‘Foam::vector’
+ typedef Vector<scalar> vector;
+                        ^~~~~~
+movingMagnetConstMurBC.C:225:22: error: ‘CfProj’ was not declared in this scope
+    condition1_=( mag(CfProj) < Raux );
+                      ^~~~~~
+movingMagnetConstMurBC.C:225:22: note: suggested alternative: ‘CfProj_t’
+    condition1_=( mag(CfProj) < Raux );
+                      ^~~~~~
+                      CfProj_t
+movingMagnetConstMurBC.C:227:4: error: ‘scalar’ was not declared in this scope
+    scalar& localpsiGrad=this->refGrad()[cellI];
+    ^~~~~~
+movingMagnetConstMurBC.C:227:4: note: suggested alternative:
+In file included from /opt/openfoam7/src/OpenFOAM/lnInclude/zeroI.H:27:0,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/zero.H:107,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/UList.H:49,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/List.H:43,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/wordList.H:42,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/patchIdentifier.H:38,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/polyPatch.H:42,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/fvPatch.H:39,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/fvPatchField.H:47,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/mixedFvPatchField.H:71,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/mixedFvPatchFields.H:29,
+                 from movingMagnetConstMurBC.H:41,
+                 from movingMagnetConstMurBC.C:26:
+/opt/openfoam7/src/OpenFOAM/lnInclude/scalar.H:69:26: note:   ‘Foam::scalar’
+     typedef doubleScalar scalar;
+                          ^~~~~~
+movingMagnetConstMurBC.C:227:12: error: ‘localpsiGrad’ was not declared in this scope
+    scalar& localpsiGrad=this->refGrad()[cellI];
+            ^~~~~~~~~~~~
+movingMagnetConstMurBC.C:227:12: note: suggested alternative: ‘localtime_r’
+    scalar& localpsiGrad=this->refGrad()[cellI];
+            ^~~~~~~~~~~~
+            localtime_r
+movingMagnetConstMurBC.C:227:25: error: invalid use of ‘this’ in non-member function
+    scalar& localpsiGrad=this->refGrad()[cellI];
+                         ^~~~
+movingMagnetConstMurBC.C:231:19: error: ‘Mrem’ was not declared in this scope
+     localpsiGrad=(Mrem & patch().Sf()[cellI])/(patch().magSf()[cellI]*mur.value());
+                   ^~~~
+movingMagnetConstMurBC.C:231:19: note: suggested alternative: ‘drem’
+     localpsiGrad=(Mrem & patch().Sf()[cellI])/(patch().magSf()[cellI]*mur.value());
+                   ^~~~
+                   drem
+movingMagnetConstMurBC.C:231:71: error: ‘mur’ was not declared in this scope
+     localpsiGrad=(Mrem & patch().Sf()[cellI])/(patch().magSf()[cellI]*mur.value());
+                                                                       ^~~
+movingMagnetConstMurBC.C:220:32: warning: unused variable ‘CfProj_p’ [-Wunused-variable]
+                         double CfProj_p = (patch().Cf()[cellI] & (Lp/mag(Lp))) - (offSet & (Lp/mag(Lp))) -relPos;
+                                ^~~~~~~~
+movingMagnetConstMurBC.C:221:32: warning: unused variable ‘CfProj_t’ [-Wunused-variable]
+                         double CfProj_t = (patch().Cf()[cellI] & (Lt/mag(Lt))) - (offSet & (Lt/mag(Lt)));
+                                ^~~~~~~~
+movingMagnetConstMurBC.C:241:9: error: ‘mixedFvPatchScalarField’ has not been declared
+         mixedFvPatchScalarField::updateCoeffs();
+         ^~~~~~~~~~~~~~~~~~~~~~~
+movingMagnetConstMurBC.C: At global scope:
+movingMagnetConstMurBC.C:245:12: error: ‘Foam::movingMagnetConstMurBC’ has not been declared
+ void Foam::movingMagnetConstMurBC::write(Ostream& os) const
+            ^~~~~~~~~~~~~~~~~~~~~~
+movingMagnetConstMurBC.C:245:42: error: variable or field ‘write’ declared void
+ void Foam::movingMagnetConstMurBC::write(Ostream& os) const
+                                          ^~~~~~~
+movingMagnetConstMurBC.C:245:42: error: ‘Ostream’ was not declared in this scope
+movingMagnetConstMurBC.C:245:42: note: suggested alternative:
+In file included from /opt/openfoam7/src/OpenFOAM/lnInclude/OSstream.H:39:0,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/messageStream.H:217,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/error.H:51,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/UListI.H:26,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/UList.H:422,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/List.H:43,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/wordList.H:42,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/patchIdentifier.H:38,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/polyPatch.H:42,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/fvPatch.H:39,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/fvPatchField.H:47,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/mixedFvPatchField.H:71,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/mixedFvPatchFields.H:29,
+                 from movingMagnetConstMurBC.H:41,
+                 from movingMagnetConstMurBC.C:26:
+/opt/openfoam7/src/OpenFOAM/lnInclude/Ostream.H:54:7: note:   ‘Foam::Ostream’
+ class Ostream
+       ^~~~~~~
+movingMagnetConstMurBC.C:245:51: error: ‘os’ was not declared in this scope
+ void Foam::movingMagnetConstMurBC::write(Ostream& os) const
+                                                   ^~
+movingMagnetConstMurBC.C:245:51: note: suggested alternative: ‘cos’
+ void Foam::movingMagnetConstMurBC::write(Ostream& os) const
+                                                   ^~
+                                                   cos
+In file included from /opt/openfoam7/src/OpenFOAM/lnInclude/typeInfo.H:57:0,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/token.H:46,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/UListIO.C:28,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/UList.C:233,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/UList.H:490,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/List.H:43,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/wordList.H:42,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/patchIdentifier.H:38,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/polyPatch.H:42,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/fvPatch.H:39,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/fvPatchField.H:47,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/mixedFvPatchField.H:71,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/mixedFvPatchFields.H:29,
+                 from movingMagnetConstMurBC.H:41,
+                 from movingMagnetConstMurBC.C:26:
+movingMagnetConstMurBC.C:259:9: error: ‘movingMagnetConstMurBC’ has not been declared
+         movingMagnetConstMurBC
+         ^
+/opt/openfoam7/src/OpenFOAM/lnInclude/className.H:91:24: note: in definition of macro ‘defineTypeNameWithName’
+     const ::Foam::word Type::typeName(Name)
+                        ^~~~
+/opt/openfoam7/src/OpenFOAM/lnInclude/className.H:120:5: note: in expansion of macro ‘defineTypeName’
+     defineTypeName(Type);                                                      \
+     ^~~~~~~~~~~~~~
+/opt/openfoam7/src/finiteVolume/lnInclude/fvPatchField.H:629:5: note: in expansion of macro ‘defineTypeNameAndDebug’
+     defineTypeNameAndDebug(typePatchTypeField, 0);                             \
+     ^~~~~~~~~~~~~~~~~~~~~~
+movingMagnetConstMurBC.C:256:5: note: in expansion of macro ‘makePatchTypeField’
+     makePatchTypeField
+     ^~~~~~~~~~~~~~~~~~
+movingMagnetConstMurBC.C:259:9: error: ‘movingMagnetConstMurBC’ has not been declared
+         movingMagnetConstMurBC
+         ^
+/opt/openfoam7/src/OpenFOAM/lnInclude/className.H:91:39: note: in definition of macro ‘defineTypeNameWithName’
+     const ::Foam::word Type::typeName(Name)
+                                       ^~~~
+/opt/openfoam7/src/OpenFOAM/lnInclude/className.H:120:5: note: in expansion of macro ‘defineTypeName’
+     defineTypeName(Type);                                                      \
+     ^~~~~~~~~~~~~~
+/opt/openfoam7/src/finiteVolume/lnInclude/fvPatchField.H:629:5: note: in expansion of macro ‘defineTypeNameAndDebug’
+     defineTypeNameAndDebug(typePatchTypeField, 0);                             \
+     ^~~~~~~~~~~~~~~~~~~~~~
+movingMagnetConstMurBC.C:256:5: note: in expansion of macro ‘makePatchTypeField’
+     makePatchTypeField
+     ^~~~~~~~~~~~~~~~~~
+In file included from /opt/openfoam7/src/OpenFOAM/lnInclude/className.H:32:0,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/typeInfo.H:57,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/token.H:46,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/UListIO.C:28,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/UList.C:233,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/UList.H:490,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/List.H:43,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/wordList.H:42,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/patchIdentifier.H:38,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/polyPatch.H:42,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/fvPatch.H:39,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/fvPatchField.H:47,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/mixedFvPatchField.H:71,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/mixedFvPatchFields.H:29,
+                 from movingMagnetConstMurBC.H:41,
+                 from movingMagnetConstMurBC.C:26:
+movingMagnetConstMurBC.C:259:9: error: ‘movingMagnetConstMurBC’ has not been declared
+         movingMagnetConstMurBC
+         ^
+/opt/openfoam7/src/OpenFOAM/lnInclude/defineDebugSwitch.H:108:9: note: in definition of macro ‘defineDebugSwitchWithName’
+     int Type::debug(::Foam::debug::debugSwitch(Name, DebugSwitch))
+         ^~~~
+/opt/openfoam7/src/OpenFOAM/lnInclude/className.H:121:5: note: in expansion of macro ‘defineDebugSwitch’
+     defineDebugSwitch(Type, DebugSwitch)
+     ^~~~~~~~~~~~~~~~~
+/opt/openfoam7/src/finiteVolume/lnInclude/fvPatchField.H:629:5: note: in expansion of macro ‘defineTypeNameAndDebug’
+     defineTypeNameAndDebug(typePatchTypeField, 0);                             \
+     ^~~~~~~~~~~~~~~~~~~~~~
+movingMagnetConstMurBC.C:256:5: note: in expansion of macro ‘makePatchTypeField’
+     makePatchTypeField
+     ^~~~~~~~~~~~~~~~~~
+/opt/openfoam7/src/OpenFOAM/lnInclude/defineDebugSwitch.H:108:36: error: ‘int Foam::debug’ redeclared as different kind of symbol
+     int Type::debug(::Foam::debug::debugSwitch(Name, DebugSwitch))
+                                    ^
+/opt/openfoam7/src/OpenFOAM/lnInclude/defineDebugSwitch.H:112:5: note: in expansion of macro ‘defineDebugSwitchWithName’
+     defineDebugSwitchWithName(Type, Type::typeName_(), DebugSwitch);           \
+     ^~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/openfoam7/src/OpenFOAM/lnInclude/className.H:121:5: note: in expansion of macro ‘defineDebugSwitch’
+     defineDebugSwitch(Type, DebugSwitch)
+     ^~~~~~~~~~~~~~~~~
+/opt/openfoam7/src/finiteVolume/lnInclude/fvPatchField.H:629:5: note: in expansion of macro ‘defineTypeNameAndDebug’
+     defineTypeNameAndDebug(typePatchTypeField, 0);                             \
+     ^~~~~~~~~~~~~~~~~~~~~~
+movingMagnetConstMurBC.C:256:5: note: in expansion of macro ‘makePatchTypeField’
+     makePatchTypeField
+     ^~~~~~~~~~~~~~~~~~
+In file included from /opt/openfoam7/src/OpenFOAM/lnInclude/defineDebugSwitch.H:33:0,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/className.H:32,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/typeInfo.H:57,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/token.H:46,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/UListIO.C:28,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/UList.C:233,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/UList.H:490,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/List.H:43,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/wordList.H:42,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/patchIdentifier.H:38,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/polyPatch.H:42,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/fvPatch.H:39,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/fvPatchField.H:47,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/mixedFvPatchField.H:71,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/mixedFvPatchFields.H:29,
+                 from movingMagnetConstMurBC.H:41,
+                 from movingMagnetConstMurBC.C:26:
+/opt/openfoam7/src/OpenFOAM/lnInclude/debug.H:52:11: note: previous declaration ‘namespace Foam::debug { }’
+ namespace debug
+           ^~~~~
+In file included from /opt/openfoam7/src/OpenFOAM/lnInclude/className.H:32:0,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/typeInfo.H:57,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/token.H:46,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/UListIO.C:28,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/UList.C:233,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/UList.H:490,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/List.H:43,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/wordList.H:42,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/patchIdentifier.H:38,
+                 from /opt/openfoam7/src/OpenFOAM/lnInclude/polyPatch.H:42,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/fvPatch.H:39,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/fvPatchField.H:47,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/mixedFvPatchField.H:71,
+                 from /opt/openfoam7/src/finiteVolume/lnInclude/mixedFvPatchFields.H:29,
+                 from movingMagnetConstMurBC.H:41,
+                 from movingMagnetConstMurBC.C:26:
+movingMagnetConstMurBC.C:259:9: error: ‘movingMagnetConstMurBC’ has not been declared
+         movingMagnetConstMurBC
+         ^
+/opt/openfoam7/src/OpenFOAM/lnInclude/defineDebugSwitch.H:108:48: note: in definition of macro ‘defineDebugSwitchWithName’
+     int Type::debug(::Foam::debug::debugSwitch(Name, DebugSwitch))
+                                                ^~~~
+/opt/openfoam7/src/OpenFOAM/lnInclude/className.H:121:5: note: in expansion of macro ‘defineDebugSwitch’
+     defineDebugSwitch(Type, DebugSwitch)
+     ^~~~~~~~~~~~~~~~~
+/opt/openfoam7/src/finiteVolume/lnInclude/fvPatchField.H:629:5: note: in expansion of macro ‘defineTypeNameAndDebug’
+     defineTypeNameAndDebug(typePatchTypeField, 0);                             \
+     ^~~~~~~~~~~~~~~~~~~~~~
+movingMagnetConstMurBC.C:256:5: note: in expansion of macro ‘makePatchTypeField’
+     makePatchTypeField
+     ^~~~~~~~~~~~~~~~~~
+movingMagnetConstMurBC.C: In member function ‘virtual void Foam::addmovingMagnetConstMurBCToDebug::readData(Foam::Istream&)’:
+movingMagnetConstMurBC.C:259:9: error: ‘movingMagnetConstMurBC’ has not been declared
+         movingMagnetConstMurBC
+         ^
+/opt/openfoam7/src/OpenFOAM/lnInclude/defineDebugSwitch.H:96:13: note: in definition of macro ‘registerDebugSwitchWithName’
+             Type::debug = readLabel(is);                                       \
+             ^~~~
+/opt/openfoam7/src/OpenFOAM/lnInclude/className.H:121:5: note: in expansion of macro ‘defineDebugSwitch’
+     defineDebugSwitch(Type, DebugSwitch)
+     ^~~~~~~~~~~~~~~~~
+/opt/openfoam7/src/finiteVolume/lnInclude/fvPatchField.H:629:5: note: in expansion of macro ‘defineTypeNameAndDebug’
+     defineTypeNameAndDebug(typePatchTypeField, 0);                             \
+     ^~~~~~~~~~~~~~~~~~~~~~
+movingMagnetConstMurBC.C:256:5: note: in expansion of macro ‘makePatchTypeField’
+     makePatchTypeField
+     ^~~~~~~~~~~~~~~~~~
+movingMagnetConstMurBC.C: In member function ‘virtual void Foam::addmovingMagnetConstMurBCToDebug::writeData(Foam::Ostream&) const’:
+movingMagnetConstMurBC.C:259:9: error: ‘movingMagnetConstMurBC’ has not been declared
+         movingMagnetConstMurBC
+         ^
+/opt/openfoam7/src/OpenFOAM/lnInclude/defineDebugSwitch.H:100:19: note: in definition of macro ‘registerDebugSwitchWithName’
+             os << Type::debug;                                                 \
+                   ^~~~
+/opt/openfoam7/src/OpenFOAM/lnInclude/className.H:121:5: note: in expansion of macro ‘defineDebugSwitch’
+     defineDebugSwitch(Type, DebugSwitch)
+     ^~~~~~~~~~~~~~~~~
+/opt/openfoam7/src/finiteVolume/lnInclude/fvPatchField.H:629:5: note: in expansion of macro ‘defineTypeNameAndDebug’
+     defineTypeNameAndDebug(typePatchTypeField, 0);                             \
+     ^~~~~~~~~~~~~~~~~~~~~~
+movingMagnetConstMurBC.C:256:5: note: in expansion of macro ‘makePatchTypeField’
+     makePatchTypeField
+     ^~~~~~~~~~~~~~~~~~
+movingMagnetConstMurBC.C: At global scope:
+movingMagnetConstMurBC.C:259:9: error: ‘movingMagnetConstMurBC’ has not been declared
+         movingMagnetConstMurBC
+         ^
+/opt/openfoam7/src/OpenFOAM/lnInclude/defineDebugSwitch.H:103:42: note: in definition of macro ‘registerDebugSwitchWithName’
+     add##Tag##ToDebug add##Tag##ToDebug_(Name)
+                                          ^~~~
+/opt/openfoam7/src/OpenFOAM/lnInclude/className.H:121:5: note: in expansion of macro ‘defineDebugSwitch’
+     defineDebugSwitch(Type, DebugSwitch)
+     ^~~~~~~~~~~~~~~~~
+/opt/openfoam7/src/finiteVolume/lnInclude/fvPatchField.H:629:5: note: in expansion of macro ‘defineTypeNameAndDebug’
+     defineTypeNameAndDebug(typePatchTypeField, 0);                             \
+     ^~~~~~~~~~~~~~~~~~~~~~
+movingMagnetConstMurBC.C:256:5: note: in expansion of macro ‘makePatchTypeField’
+     makePatchTypeField
+     ^~~~~~~~~~~~~~~~~~
+In file included from movingMagnetConstMurBC.C:28:0:
+movingMagnetConstMurBC.C:259:9: error: ‘movingMagnetConstMurBC’ was not declared in this scope
+         movingMagnetConstMurBC
+         ^
+/opt/openfoam7/src/OpenFOAM/lnInclude/addToRunTimeSelectionTable.H:39:49: note: in definition of macro ‘addToRunTimeSelectionTable’
+     baseType::add##argNames##ConstructorToTable<thisType>                      \
+                                                 ^~~~~~~~
+/opt/openfoam7/src/finiteVolume/lnInclude/fvPatchField.H:630:5: note: in expansion of macro ‘addToPatchFieldRunTimeSelection’
+     addToPatchFieldRunTimeSelection(PatchTypeField, typePatchTypeField)
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+movingMagnetConstMurBC.C:256:5: note: in expansion of macro ‘makePatchTypeField’
+     makePatchTypeField
+     ^~~~~~~~~~~~~~~~~~
+movingMagnetConstMurBC.C:259:9: note: suggested alternative: ‘movingMagneConstMurtBC’
+         movingMagnetConstMurBC
+         ^
+/opt/openfoam7/src/OpenFOAM/lnInclude/addToRunTimeSelectionTable.H:39:49: note: in definition of macro ‘addToRunTimeSelectionTable’
+     baseType::add##argNames##ConstructorToTable<thisType>                      \
+                                                 ^~~~~~~~
+/opt/openfoam7/src/finiteVolume/lnInclude/fvPatchField.H:630:5: note: in expansion of macro ‘addToPatchFieldRunTimeSelection’
+     addToPatchFieldRunTimeSelection(PatchTypeField, typePatchTypeField)
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+movingMagnetConstMurBC.C:256:5: note: in expansion of macro ‘makePatchTypeField’
+     makePatchTypeField
+     ^~~~~~~~~~~~~~~~~~
+/opt/openfoam7/src/OpenFOAM/lnInclude/addToRunTimeSelectionTable.H:39:57: error: template argument 1 is invalid
+     baseType::add##argNames##ConstructorToTable<thisType>                      \
+                                                         ^
+/opt/openfoam7/src/finiteVolume/lnInclude/fvPatchField.H:583:5: note: in expansion of macro ‘addToRunTimeSelectionTable’
+     addToRunTimeSelectionTable                                                 \
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/openfoam7/src/finiteVolume/lnInclude/fvPatchField.H:630:5: note: in expansion of macro ‘addToPatchFieldRunTimeSelection’
+     addToPatchFieldRunTimeSelection(PatchTypeField, typePatchTypeField)
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+movingMagnetConstMurBC.C:256:5: note: in expansion of macro ‘makePatchTypeField’
+     makePatchTypeField
+     ^~~~~~~~~~~~~~~~~~
+movingMagnetConstMurBC.C:259:9: error: ‘movingMagnetConstMurBC’ was not declared in this scope
+         movingMagnetConstMurBC
+         ^
+/opt/openfoam7/src/OpenFOAM/lnInclude/addToRunTimeSelectionTable.H:39:49: note: in definition of macro ‘addToRunTimeSelectionTable’
+     baseType::add##argNames##ConstructorToTable<thisType>                      \
+                                                 ^~~~~~~~
+/opt/openfoam7/src/finiteVolume/lnInclude/fvPatchField.H:630:5: note: in expansion of macro ‘addToPatchFieldRunTimeSelection’
+     addToPatchFieldRunTimeSelection(PatchTypeField, typePatchTypeField)
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+movingMagnetConstMurBC.C:256:5: note: in expansion of macro ‘makePatchTypeField’
+     makePatchTypeField
+     ^~~~~~~~~~~~~~~~~~
+movingMagnetConstMurBC.C:259:9: note: suggested alternative: ‘movingMagneConstMurtBC’
+         movingMagnetConstMurBC
+         ^
+/opt/openfoam7/src/OpenFOAM/lnInclude/addToRunTimeSelectionTable.H:39:49: note: in definition of macro ‘addToRunTimeSelectionTable’
+     baseType::add##argNames##ConstructorToTable<thisType>                      \
+                                                 ^~~~~~~~
+/opt/openfoam7/src/finiteVolume/lnInclude/fvPatchField.H:630:5: note: in expansion of macro ‘addToPatchFieldRunTimeSelection’
+     addToPatchFieldRunTimeSelection(PatchTypeField, typePatchTypeField)
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+movingMagnetConstMurBC.C:256:5: note: in expansion of macro ‘makePatchTypeField’
+     makePatchTypeField
+     ^~~~~~~~~~~~~~~~~~
+/opt/openfoam7/src/OpenFOAM/lnInclude/addToRunTimeSelectionTable.H:39:57: error: template argument 1 is invalid
+     baseType::add##argNames##ConstructorToTable<thisType>                      \
+                                                         ^
+/opt/openfoam7/src/finiteVolume/lnInclude/fvPatchField.H:589:5: note: in expansion of macro ‘addToRunTimeSelectionTable’
+     addToRunTimeSelectionTable                                                 \
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/openfoam7/src/finiteVolume/lnInclude/fvPatchField.H:630:5: note: in expansion of macro ‘addToPatchFieldRunTimeSelection’
+     addToPatchFieldRunTimeSelection(PatchTypeField, typePatchTypeField)
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+movingMagnetConstMurBC.C:256:5: note: in expansion of macro ‘makePatchTypeField’
+     makePatchTypeField
+     ^~~~~~~~~~~~~~~~~~
+movingMagnetConstMurBC.C:259:9: error: ‘movingMagnetConstMurBC’ was not declared in this scope
+         movingMagnetConstMurBC
+         ^
+/opt/openfoam7/src/OpenFOAM/lnInclude/addToRunTimeSelectionTable.H:39:49: note: in definition of macro ‘addToRunTimeSelectionTable’
+     baseType::add##argNames##ConstructorToTable<thisType>                      \
+                                                 ^~~~~~~~
+/opt/openfoam7/src/finiteVolume/lnInclude/fvPatchField.H:630:5: note: in expansion of macro ‘addToPatchFieldRunTimeSelection’
+     addToPatchFieldRunTimeSelection(PatchTypeField, typePatchTypeField)
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+movingMagnetConstMurBC.C:256:5: note: in expansion of macro ‘makePatchTypeField’
+     makePatchTypeField
+     ^~~~~~~~~~~~~~~~~~
+movingMagnetConstMurBC.C:259:9: note: suggested alternative: ‘movingMagneConstMurtBC’
+         movingMagnetConstMurBC
+         ^
+/opt/openfoam7/src/OpenFOAM/lnInclude/addToRunTimeSelectionTable.H:39:49: note: in definition of macro ‘addToRunTimeSelectionTable’
+     baseType::add##argNames##ConstructorToTable<thisType>                      \
+                                                 ^~~~~~~~
+/opt/openfoam7/src/finiteVolume/lnInclude/fvPatchField.H:630:5: note: in expansion of macro ‘addToPatchFieldRunTimeSelection’
+     addToPatchFieldRunTimeSelection(PatchTypeField, typePatchTypeField)
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+movingMagnetConstMurBC.C:256:5: note: in expansion of macro ‘makePatchTypeField’
+     makePatchTypeField
+     ^~~~~~~~~~~~~~~~~~
+/opt/openfoam7/src/OpenFOAM/lnInclude/addToRunTimeSelectionTable.H:39:57: error: template argument 1 is invalid
+     baseType::add##argNames##ConstructorToTable<thisType>                      \
+                                                         ^
+/opt/openfoam7/src/finiteVolume/lnInclude/fvPatchField.H:595:5: note: in expansion of macro ‘addToRunTimeSelectionTable’
+     addToRunTimeSelectionTable                                                 \
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/openfoam7/src/finiteVolume/lnInclude/fvPatchField.H:630:5: note: in expansion of macro ‘addToPatchFieldRunTimeSelection’
+     addToPatchFieldRunTimeSelection(PatchTypeField, typePatchTypeField)
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+movingMagnetConstMurBC.C:256:5: note: in expansion of macro ‘makePatchTypeField’
+     makePatchTypeField
+     ^~~~~~~~~~~~~~~~~~
+make: *** [Make/linux64GccDPInt32Opt/movingMagnetConstMurBC.o] Error 1

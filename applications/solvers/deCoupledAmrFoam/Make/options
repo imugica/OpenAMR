@@ -1,0 +1,27 @@
+
+EXE_INC = \
+    -I. \
+    -I$(LIB_SRC)/meshTools/lnInclude \
+    -I$(LIB_SRC)/OpenFOAM/lnInclude \
+    -I$(LIB_SRC)/sampling/lnInclude \
+    -I$(LIB_SRC)/finiteVolume/lnInclude \
+    -I$(LIB_SRC)/regionModels/regionModel/lnInclude \
+    -I$(LIB_SRC)/transportModels \
+    -I./fluid \
+    -I./solid \
+    -I./include \
+    -I../../../src/cycleIDvars/lnInclude \
+    -I../../../src/magneticProp/lnInclude  \
+    -I../../../src/therCycleControl/lnInclude
+
+
+EXE_LIBS = \
+    -L$(FOAM_USER_LIBBIN) \
+    -lmeshTools \
+    -lfiniteVolume \
+    -lsampling \
+    -lregionModels \
+    -lcycleIDvars \
+    -lmagneticProp \
+    -ltherCycleControl \
+

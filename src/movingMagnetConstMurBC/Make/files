@@ -1,0 +1,4 @@
+
+movingMagnetConstMurBC.C
+
+LIB = $(FOAM_USER_LIBBIN)/libmovingMagnetConstMurBC

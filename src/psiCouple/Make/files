@@ -1,0 +1,7 @@
+
+psiCouple.C
+
+
+LIB = $(FOAM_USER_LIBBIN)/libpsiCouple
+
+

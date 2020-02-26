@@ -1,0 +1,41 @@
+
+/*---------------------------------------------------------------------------*\
+                ___                      _    __  __ ____  
+               / _ \ _ __   ___ _ __    / \  |  \/  |  _ \ 
+              | | | | '_ \ / _ \ '_ \  / _ \ | |\/| | |_) |
+              | |_| | |_) |  __/ | | |/ ___ \| |  | |  _ < 
+               \___/| .__/ \___|_| |_/_/   \_\_|  |_|_| \_\
+                    |_|                  
+
+  OpenAMR - Open source solvers for Active Magnetocaloric Regenertor cycles.
+
+  Copyright (C) 2020 Ibai Mugica.
+
+\*---------------------------------------------------------------------------*/
+
+## Compilation instructions
+
+This software was has been tested to work with OpenFoam v7 (https://openfoam.org/version/7/). 
+In order to compile it, it is necessary to have already installed OpenFoam v7. Then, simply 
+type the following commands in the terminal:
+
+./Allwclean
+./Allwmake
+
+## Copyright
+
+OpenAMR is free software. You can redistribute it and modify it under the
+terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or any later version.
+
+## Acknowledgments
+
+This work is part of the NSERC chair on industrial energy efficiency
+established at Université de Sherbrooke in 2014 with the support of
+Hydro-Québec, Ressources Naturelles Canada (CanmetENERGIE), and Rio 
+Tinto Alcan.
+
+## Contact information
+
+* Website: http://www.imugica.com
+* GitHub:  https://github.com/imugica/OpenAMR

@@ -1,0 +1,3 @@
+solidMultiRegionControl.C
+
+LIB = $(FOAM_USER_LIBBIN)/libsolidMultiRegionControl

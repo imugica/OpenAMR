@@ -1,0 +1,15 @@
+#!/bin/sh
+cd ${0%/*} || exit 1    # run from this directory
+set -x
+
+wclean libso cycleIDvars
+wclean libso heatExchangerBC
+wclean libso magneticProp
+wclean libso movingMagnetBC
+wclean libso psiCouple
+wclean libso psiCoupleConstMur
+wclean libso solidMultiRegionControl
+wclean libso tempCouple
+wclean libso therCycleControl
+
+# ----------------------------------------------------------------- end-of-file

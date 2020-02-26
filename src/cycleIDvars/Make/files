@@ -1,0 +1,4 @@
+
+cycleIDvars.C
+
+LIB = $(FOAM_USER_LIBBIN)/libcycleIDvars
